@@ -43,3 +43,8 @@ void Component::printComponent() const {
 std::string Component::printRange(const std::pair<float, float>& range) const {
     return "(" + std::to_string(range.first) + ", " + std::to_string(range.second) + ")";
 }
+
+bool Component::isWithinOperatingConditions(float voltage, float temperature) const {
+    return (voltage >= voltageRange.first && voltage <= voltageRange.second) &&
+        (temperature >= temperatureRange.first && temperature <= temperatureRange.second);
+}

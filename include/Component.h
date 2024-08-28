@@ -5,6 +5,11 @@
 #include <utility>
 #include <iostream>
 
+#define MIN_TEMP -40
+#define MAX_TEMP 85
+#define MIN_VOLT 5
+#define MAX_VOLT 12
+
 class Component {
 public:
     Component(const std::string& name, std::pair<float, float> voltageRange, std::pair<float, float> temperatureRange)
@@ -16,6 +21,7 @@ public:
     bool mIsTemperatureRangeSet = false;
 
     void printComponent() const;
+    bool isWithinOperatingConditions(float voltage, float temperature) const;
 
     // Getters
     std::string getName()const;

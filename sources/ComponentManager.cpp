@@ -93,11 +93,18 @@ bool ComponentManager::parseVoltRange(const std::string& line, Component* compon
     return false;
 }
 
-void ComponentManager::printComponents()
+void ComponentManager::printComponentsWithinOperatingConditions(float voltage, float temperature)
 {
     // Print all components in the vector
+    std::cout << "The following components can operate under the given conditions:"  << std::endl; // Optional: Add a line break between components
+    std::cout << "Temperature:" << temperature << std::endl; // Optional: Add a line break between components
+    std::cout << "Voltage:" << voltage << std::endl; // Optional: Add a line break between components
     for (const auto& component : components) {
-        component.printComponent();
-        std::cout << std::endl; // Optional: Add a line break between components
+        if (component.isWithinOperatingConditions(voltage, temperature))
+        {
+            component.printComponent();
+            std::cout << std::endl; // Optional: Add a line break between components
+        }
     }
 }
+

@@ -17,8 +17,12 @@ Examples:
 Example files provided for the task are located in the CADY\Task_example_files directory.
 
 Configuration:
-The JSON configuration file is located in the CADY\Config directory. 
+The JSON configuration file is located in the CADY\Config directory.
 This file specifies the path to the Task_example_files directory.
+You can also configure operating conditions within this file. 
+The following parameters can be set:
+condition_temperature: The temperature condition (float) under which components should operate (e.g., -20 for -20°C).
+condition_voltage: The voltage condition (float) under which components should operate (e.g., 5 for 5V).
 
 Hope you'll enjoy checking it! 
 Eden Benzimra😊

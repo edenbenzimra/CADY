@@ -18,7 +18,7 @@ public:
     void loadComponentsFromFiles(const std::vector<std::string>& filePaths);
     void initializeTemperaturePatterns();
     void initializeVoltagePatterns();
-    void printComponents();
+    void printComponentsWithinOperatingConditions(float voltage, float temperature);
 private:
     
     Patterns mTempPatterns;
